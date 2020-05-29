@@ -1,6 +1,6 @@
 {
   "name": "vuepress-plugin-separate-pages",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Shows content of current header by hashtag from location",
   "main": "index.js",
   "scripts": {

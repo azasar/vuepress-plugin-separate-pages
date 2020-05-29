@@ -72,7 +72,9 @@ function showOnlyCurrentHeaderContent() {
         levelTwoHeader.nextUntil('h2').show();
 
         // make sure that it scrolls to target header (even if it is not level 2)
-        header.get(0).scrollIntoView();
+        if (header) {
+            header.get(0).scrollIntoView();
+        }
     }
 }
 
