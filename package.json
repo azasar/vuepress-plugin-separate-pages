@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/azasar/vuepress-plugin-separate-pages/issues"
   },
-  "homepage": "https://github.com/azasar/vuepress-plugin-separate-pages#readme"
+  "homepage": "https://github.com/azasar/vuepress-plugin-separate-pages#readme",
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
 }
