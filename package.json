@@ -1,0 +1,24 @@
+{
+  "name": "vuepress-plugin-separate-pages",
+  "version": "0.1.0",
+  "description": "Shows content of current header by hashtag from location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azasar/vuepress-plugin-separate-pages.git"
+  },
+  "keywords": [
+    "vuepress",
+    "plugin",
+    "separate pages"
+  ],
+  "author": "Azamat Sarsenbayev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azasar/vuepress-plugin-separate-pages/issues"
+  },
+  "homepage": "https://github.com/azasar/vuepress-plugin-separate-pages#readme"
+}
