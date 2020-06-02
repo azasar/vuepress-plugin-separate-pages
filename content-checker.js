@@ -1,4 +1,7 @@
 export default ({ isServer }) => {
+    const options = JSON.parse(SEPARATE_PAGES_OPTIONS);
+    const alwaysVisibleBlocks = options.alwaysVisibleBlocks || [];
+
     if (!isServer) {
         window.$ = window.jQuery = require('jquery');
 
@@ -23,12 +26,12 @@ export default ({ isServer }) => {
         function setInitialCheck() {
             let counter = 0;
             const interval = setInterval(() => {
+                counter++;
+
                 if ($('.content').contents().length || counter === 50) {
                     checkContent();
                     clearInterval(interval);
                 }
-
-                counter++;
             }, 100);
         }
 
@@ -41,6 +44,7 @@ export default ({ isServer }) => {
                 }
             }
 
+            showAlwaysVisibleBlocks();
             showContent();
         }
 
@@ -51,7 +55,7 @@ export default ({ isServer }) => {
             let header = $(`${location.hash}`);
             const levelTwoHeader = getLevelTwoHeader(header);
 
-            if (levelTwoHeader) {
+            if (levelTwoHeader.get(0)) {
                 wrapTextNodes($('.content'));
 
                 const levelOneHeader = getLevelOneHeader();
@@ -86,9 +90,8 @@ export default ({ isServer }) => {
             const levelOneHeader = getLevelOneHeader();
 
             wrapTextNodes($('.content'));
-            // unwrapNoTranslateBlocks();
 
-            if (levelOneHeader) {
+            if (levelOneHeader.get(0)) {
                 levelOneHeader.nextAll().hide();
                 levelOneHeader.nextUntil('h2').show();
             }
@@ -100,6 +103,12 @@ export default ({ isServer }) => {
 
         function hideContent() {
             $('body').addClass('shy');
+        }
+
+        function showAlwaysVisibleBlocks() {
+            for (let block of alwaysVisibleBlocks) {
+                $(block).show();
+            }
         }
 
         function getLevelOneHeader() {
