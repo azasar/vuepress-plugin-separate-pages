@@ -22,6 +22,7 @@ $ yarn add vuepress-plugin-separate-pages
 
 ## Usage
 Add `separate-pages` in your site config file.
+> See [official docs on using a plugin](https://vuepress.vuejs.org/plugin/using-a-plugin.html)
 
 ```js
 // .vuepress/config.js
@@ -29,6 +30,21 @@ Add `separate-pages` in your site config file.
 module.exports = {
   plugins: [
     [ 'separate-pages' ]
+  ]
+}
+```
+
+## Options
+> See Plugin Option API [official docs](https://vuepress.vuejs.org/plugin/option-api.html)
+
+`alwaysVisibleBlocks` - list of blocks described by css rules. These blocks will always be visible. 
+
+```js
+// .vuepress/config.js
+
+module.exports = {
+  plugins: [
+    [ 'separate-pages', { alwaysVisibleBlocks: ['#disqus_thread'] } ]
   ]
 }
 ```
