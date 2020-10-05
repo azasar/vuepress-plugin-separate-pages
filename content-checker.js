@@ -20,6 +20,13 @@ export default ({ isServer }) => {
             }, 100);
         });
 
+        $(window).on('hashchange', function() {
+            hideContent();
+            setTimeout(() => {
+                checkContent();
+            }, 100);
+        });
+
         /**
          * Check every 100 milliseconds, until content is rendered or 50 checks were applied
          */
